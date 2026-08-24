@@ -2,8 +2,6 @@
 
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 
 # Load dataset from the project directory
 df = pd.read_csv("penguins.csv")
@@ -35,14 +33,10 @@ tolerance = 1e-5
 max_iterations = 1000
 current_mse = None
 mse_history = []
-w_history = []
-b_history = []
 
 for i in range(max_iterations):
 
     predictions = prediction(w, x, b)
-    w_history.append(w)
-    b_history.append(b)
 
     previous_mse = current_mse
 
