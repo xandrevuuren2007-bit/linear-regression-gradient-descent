@@ -34,6 +34,7 @@ max_iterations = 1000
 current_mse = None
 mse_history = []
 
+
 for i in range(max_iterations):
 
     predictions = prediction(w, x, b)
