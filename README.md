@@ -1,33 +1,74 @@
-# Linear Regression From Scratch With Gradient Descent
+# Linear Regression From Scratch
 
-A first-principles implementation of linear regression and gradient descent using Python and NumPy.
+Built to understand the mathematical and computational machinery behind machine learning.
 
-## What this project implements
+## About
 
-- Linear regression
-- Mean squared error
-- Partial derivatives
-- Gradient calculation
-- Parameter updates using gradient descent
-- Convergence detection
-- MSE history logging
+This project is an experiment in implementing linear regression from scratch using Python, NumPy, and Pandas.
 
-## Dataset
+The goal was not to build the most optimized regression model, but to understand what is actually happening underneath machine learning libraries.
 
-The project uses the Palmer Penguins dataset and predicts bill length from body mass.
+I started with a simple linear regression model and manually implemented gradient descent before extending the experiment to multiple linear regression.
 
-## Notes
+## Current Implementation
 
-Feature standardization is intentionally not implemented in this version. Because body mass is relatively large, a small learning rate (1e-8) is used to keep the gradient descent updates stable.
+The current model uses multiple linear regression with three input features:
 
-The purpose of this project is to understand and implement the machinery of gradient descent rather than produce an optimized machine-learning library.
+- Bill length
+- Bill depth
+- Flipper length
 
-## Requirements
+The target variable is:
+
+- Body mass
+
+The model is:
+
+`ŷ = Xw + b`
+
+Trained using gradient descent.
+
+For the weights:
+
+`dw = (2/n) Xᵀ(Xw - y)`
+
+For the bias:
+
+`db = 2 mean(Xw + b - y)`
+
+The parameters are updated using:
+
+`w = w - αdw`
+
+`b = b - αdb`
+
+## Technologies
 
 - Python
 - NumPy
 - Pandas
+- Git / GitHub
 
-## Running
+## Dataset
 
-Place `penguins.csv` in the project directory and run the python file
+This experiment uses the Palmer Penguins dataset.
+
+Rows containing missing values in these variables are removed before training.
+
+Place `penguins.csv` in the project directory and run the Python file.
+
+## Learning Progression
+
+Experiment 1: Basic Linear Regression
+
+Experiment 2: Implementing Gradient Descent
+
+Experiment 3: Multiple Linear Regression
+
+- `ŷ = wx + b` → `ŷ = Xw + b`
+
+This introduced vectors, matrices, transposes, dot products, and vectorized gradient calculations.
+
+## Purpose
+
+The purpose of this project is educational.
